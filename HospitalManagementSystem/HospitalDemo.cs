@@ -22,23 +22,25 @@ namespace HospitalManagementSystem
 
             // Реєстрація пацієнтів
             Console.WriteLine("\n--- РЕЄСТРАЦІЯ ПАЦІЄНТІВ ---");
-            hospital.RegisterPatient(new Patient(1, "Коваленко Тарас", 45));
-            hospital.RegisterPatient(new Patient(2, "Мельник Юлія", 32));
-            hospital.RegisterPatient(new Patient(3, "Шевченко Андрій", 28));
-            hospital.RegisterPatient(new Patient(4, "Бондаренко Наталія", 60));
+            hospital.RegisterPatient(new Patient(1, "Курбатов Ярослав", 20));
+            hospital.RegisterPatient(new Patient(2, "Кладніцький Станіслав", 19));
+            hospital.RegisterPatient(new Patient(3, "Гнатієнко Михайло", 19));
+            hospital.RegisterPatient(new Patient(4, "Ноздрачьов Артем", 19));
+            hospital.RegisterPatient(new Patient(5, "Корнілов Борислав", 19));
 
             // Створення палат
             Console.WriteLine("\n--- СТВОРЕННЯ ПАЛАТ ---");
-            hospital.CreateRoom(new HospitalRoom(101, 2));
-            hospital.CreateRoom(new HospitalRoom(102, 3));
-            hospital.CreateRoom(new HospitalRoom(201, 1));
+            hospital.CreateRoom(new HospitalRoom(211, 2));
+            hospital.CreateRoom(new HospitalRoom(302, 3));
+            hospital.CreateRoom(new HospitalRoom(505, 1));
 
             // Госпіталізація пацієнтів
             Console.WriteLine("\n--- ГОСПІТАЛІЗАЦІЯ ---");
-            hospital.HospitalizePatient(1, 101); 
-            hospital.HospitalizePatient(2, 101); 
-            hospital.HospitalizePatient(3, 102); 
-            hospital.HospitalizePatient(4, 201); 
+            hospital.HospitalizePatient(1, 211); 
+            hospital.HospitalizePatient(2, 211); 
+            hospital.HospitalizePatient(3, 302); 
+            hospital.HospitalizePatient(4, 211);
+            hospital.HospitalizePatient(5, 505);
 
             // Створення медичних записів
 
@@ -55,7 +57,7 @@ namespace HospitalManagementSystem
             // Перегляд історії пацієнта
 
             Console.WriteLine("\n--- ІСТОРІЯ ПАЦІЄНТА ---");
-            var history = hospital.GetPatientHistory(1); // Історія пацієнта з ID=1 (Коваленко)
+            var history = hospital.GetPatientHistory(1); 
             foreach (var record in history)
             {
                 Console.WriteLine($" Дата: {record.Date.ToShortDateString()}");
